@@ -36,11 +36,6 @@ class GameController {
     static void setState(String gameStateName, int rollValue) {
         CrapsGameState passedIn = getState(gameStateName);
 
-        // ***********************************************
-        if (passedIn instanceof WinState || passedIn instanceof LooseState) {
-            passedIn.play(rollValue);
-        }
-
         if (passedIn instanceof PointState) {
             ((PointState) passedIn).storePointValueAs(rollValue);
         }
